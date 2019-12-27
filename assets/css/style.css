@@ -1,0 +1,741 @@
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,u,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+@import url(https://fonts.googleapis.com/css?family=Lato:400,700);
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+body {
+  background: #C5DDEB;
+  font: 14px/20px "Lato", Arial, sans-serif;
+  padding: 40px 0;
+  color: white;
+}
+
+.container {
+  margin: 0 auto;
+  width: 750px;
+  background: #444753;
+  border-radius: 5px;
+}
+
+.people-list {
+  width: 260px;
+  float: left;
+  display: none;
+}
+.people-list .search {
+  padding: 20px;
+}
+.people-list input {
+  border-radius: 3px;
+  border: none;
+  padding: 14px;
+  color: black;
+  width: 100%;
+  font-size: 14px;
+}
+.people-list .fa-search {
+  position: relative;
+  left: -25px;
+}
+.people-list ul {
+  height: 770px;
+  overflow-y: scroll;
+}
+.people-list ul li {
+    border-bottom: 1px solid #636363;
+    cursor:pointer;
+}
+.people-list ul li :hover {
+  background-color: #6A6C75;
+}
+
+.people-list img {
+  float: left;
+}
+.people-list .about {
+  float: left;
+}
+.people-list .about {
+    padding: 10px 0px 10px 10px;
+}
+.people-list .status {
+    color: #92959E;
+    text-overflow: ellipsis;
+    word-wrap: break-word;
+	width: 238px;
+}
+
+.chat {
+  width: 490px;
+  float: left;
+  background: #F2F5F8;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: #434651;
+  display: none;
+}
+
+.chat ::-webkit-scrollbar-thumb {
+    background-color: #c3c3c3;
+    border: 2px solid #9a9a9a;
+}
+
+.chat ::-webkit-scrollbar-thumb {
+    background-color: #b1b1b1;
+    border: 2px solid #8c8c8c;
+}
+
+.chat ::-webkit-scrollbar-track {
+    background-color: #e8e8e8;
+}
+
+.chat .chat-header {
+  padding: 20px;
+  border-bottom: 1px solid #cacaca;
+}
+.chat .chat-header img {
+  float: left;
+}
+.chat .chat-header .chat-about {
+  float: left;
+  padding-left: 10px;
+  margin-top: 6px;
+}
+.chat .chat-header .chat-with {
+  font-weight: bold;
+  font-size: 16px;
+}
+.chat .chat-header .chat-num-messages {
+  color: #92959E;
+}
+.chat .chat-header .fa-star {
+  float: right;
+  color: #D8DADF;
+  font-size: 20px;
+  margin-top: 12px;
+}
+.chat .chat-history {
+  padding: 30px 30px 20px;
+  overflow-y: scroll;
+  max-height: 747px;
+  overflow-x: hidden;
+}
+.chat .chat-history .message-data {
+  margin-bottom: 15px;
+}
+.chat .chat-history .message-data-time {
+  color: #a8aab1;
+  padding-left: 6px;
+}
+.chat .chat-history .message {
+  color: white;
+  padding: 18px 20px;
+  line-height: 26px;
+  font-size: 16px;
+  border-radius: 7px;
+  margin-bottom: 30px;
+  width: 90%;
+  position: relative;
+  word-wrap: break-word;
+}
+.chat .chat-history .message:after {
+  bottom: 100%;
+  left: 7%;
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-bottom-color: #86BB71;
+  border-width: 10px;
+  margin-left: -10px;
+}
+.chat .chat-history .my-message {
+  background: #86BB71;
+}
+.chat .chat-history .other-message {
+  background: #94C2ED;
+}
+.chat .chat-history .other-message:after {
+  border-bottom-color: #94C2ED;
+  left: 93%;
+}
+.chat .chat-message {
+  padding: 30px;
+}
+.chat .chat-message textarea {
+  width: 100%;
+  border: none;
+  padding: 10px 20px;
+  font: 14px/22px "Lato", Arial, sans-serif;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  resize: none;
+}
+.chat .chat-message .fa-file-o, .chat .chat-message .fa-file-image-o {
+  font-size: 16px;
+  color: gray;
+  cursor: pointer;
+}
+.chat .chat-message button {
+  float: right;
+  color: #94C2ED;
+  font-size: 16px;
+  text-transform: uppercase;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  background: #F2F5F8;
+}
+.chat .chat-message button:hover {
+  color: #75b1e8;
+}
+
+.online, .offline, .me {
+  margin-right: 3px;
+  font-size: 10px;
+}
+
+.online {
+  color: #86BB71;
+}
+
+.offline {
+  color: #E38968;
+}
+
+.me {
+  color: #94C2ED;
+}
+
+.align-left {
+  text-align: left;
+}
+
+.align-right {
+  text-align: right;
+}
+
+.float-right {
+  float: right;
+}
+
+.clearfix:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+
+.angel {
+	background-position: 0px;
+}
+
+.angry {
+	background-position: -20px 0
+}
+
+.bandit {
+	background-position: -40px 0
+}
+
+.bartlett {
+	background-position: -60px 0
+}
+
+.beer {
+	background-position: -80px 0
+}
+
+.bigsmile {
+	background-position: -100px 0
+}
+
+.bike  {
+	background-position: -120px 0
+}
+
+.blackwidow {
+	background-position: -140px 0
+}
+
+.blushing {
+	background-position: -160px 0
+}
+
+.bow {
+	background-position: -180px 0
+}
+
+.brokenheart {
+	background-position: -200px 0
+}
+
+.bucky {
+	background-position: -220px 0
+}
+
+.bug {
+	background-position: -240px 0
+}
+
+.cake {
+	background-position: -260px 0
+}
+
+.call {
+	background-position: -280px 0
+}
+
+.captain {
+	background-position: -300px 0
+}
+
+.cash {
+	background-position: -320px 0
+}
+
+.cat {
+	background-position: -340px 0
+}
+
+.clapping {
+	background-position: -360px 0
+}
+
+.coffee {
+	background-position: -380px 0
+}
+
+.cool {
+	background-position: -400px 0
+}
+
+.crying {
+	background-position: -420px 0
+}
+
+.dancing {
+	background-position: -440px 0
+}
+
+.devil {
+	background-position: -460px 0
+}
+
+.dog {
+	background-position: -480px 0
+}
+
+.doh {
+	background-position: -500px 0
+}
+
+.drink {
+	background-position: -520px 0
+}
+
+.drunk {
+	background-position: -540px 0
+}
+
+.dull {
+	background-position: -560px 0
+}
+
+.emo {
+	background-position: -580px 0
+}
+
+.envy {
+	background-position: -600px 0
+}
+
+.evilgrin {
+	background-position: -620px 0
+}
+
+.facepalm {
+	background-position: -640px 0
+}
+
+.finger {
+	background-position: -660px 0
+}
+
+.fingerscrossed {
+	background-position: -680px 0
+}
+
+.flower {
+	background-position: -700px 0
+}
+
+.fubar {
+	background-position: -720px 0
+}
+
+.giggle {
+	background-position: -740px 0
+}
+
+.handshake {
+	background-position: -760px 0
+}
+
+.happy {
+	background-position: -780px 0
+}
+
+.headbang {
+	background-position: -800px 0
+}
+
+.heart {
+	background-position: -820px 0
+}
+
+.heidy {
+	background-position: -840px 0
+}
+
+.hi {
+	background-position: -860px 0
+}
+
+.highfive {
+	background-position: -880px 0
+}
+
+.hollest {
+	background-position: -900px 0
+}
+
+.hug {
+	background-position: -920px 0
+}
+
+.idea {
+	background-position: -940px 0
+}
+
+.inlove {
+	background-position: -960px 0
+}
+
+.itwasntme {
+	background-position: -980px 0
+}
+
+.kiss {
+	background-position: -1000px 0
+}
+
+.lalala {
+	background-position: -1020px 0
+}
+
+.lipssealed {
+	background-position: -1040px 0
+}
+
+.mail {
+	background-position: -1060px 0
+}
+
+.makeup {
+	background-position: -1080px 0
+}
+
+.malthe {
+	background-position: -1100px 0
+}
+
+.mmm {
+	background-position: -1120px 0
+}
+
+.mooning {
+	background-position: -1140px 0
+}
+
+.movie {
+	background-position: -1160px 0
+}
+
+.muscle {
+	background-position: -1180px 0
+}
+
+.music {
+	background-position: -1200px 0
+}
+
+.nerd {
+	background-position: -1220px 0
+}
+
+.nickfury {
+	background-position: -1240px 0
+}
+
+.ninja {
+	background-position: -1260px 0
+}
+
+.no {
+	background-position: -1280px 0
+}
+
+.nod {
+	background-position: -1300px 0
+}
+
+.oliver {
+	background-position: -1320px 0
+}
+
+.party {
+	background-position: -1340px 0
+}
+
+.phone {
+	background-position: -1360px 0
+}
+
+.pizza {
+	background-position: -1380px 0
+}
+
+.poolparty {
+	background-position: -1400px 0
+}
+
+.priidu {
+	background-position: -1420px 0
+}
+
+.puking {
+	background-position: -1440px 0
+}
+
+.punch {
+	background-position: -1460px 0
+}
+
+.rain {
+	background-position: -1480px 0
+}
+
+.rock {
+	background-position: -1500px 0
+}
+
+.rofl {
+	background-position: -1520px 0
+}
+
+.sadsmile {
+	background-position: -1540px 0
+}
+
+.shake {
+	background-position: -1560px 0
+}
+
+.sheep {
+	background-position: -1580px 0
+}
+
+.shielddeflect {
+	background-position: -1600px 0
+}
+
+.skype {
+	background-position: -1620px 0
+}
+
+.sleepy {
+	background-position: -1640px 0
+}
+
+.smile {
+	background-position: -1660px 0
+}
+
+.smirk {
+	background-position: -1680px 0
+}
+
+.smoking {
+	background-position: -1700px 0
+}
+
+.speechless {
+	background-position: -1720px 0
+}
+
+.star {
+	background-position: -1740px 0
+}
+
+.sunshine {
+	background-position: -1760px 0
+}
+
+.surprised {
+	background-position: -1780px 0
+}
+
+.swear {
+	background-position: -1800px 0
+}
+
+.sweating {
+	background-position: -1820px 0
+}
+
+.talking {
+	background-position: -1840px 0
+}
+
+.talktothehand {
+	background-position: -1860px 0
+}
+
+.tauri {
+	background-position: -1880px 0
+}
+
+.thinking {
+	background-position: -1900px 0
+}
+
+.time {
+	background-position: -1920px 0
+}
+
+.tmi {
+	background-position: -1940px 0
+}
+
+.toivo {
+	background-position: -1960px 0
+}
+
+.tongueout {
+	background-position: -1980px 0
+}
+
+.tumbleweed {
+	background-position: -2000px 0
+}
+
+.wait {
+	background-position: -2020px 0
+}
+
+.waiting {
+	background-position: -2040px 0
+}
+
+.wfh {
+	background-position: -2060px 0
+}
+
+.whew {
+	background-position: -2080px 0
+}
+
+.wink {
+	background-position: -2100px 0
+}
+
+.wondering {
+	background-position: -2120px 0
+}
+
+.worried {
+	background-position: -2140px 0
+}
+
+.wtf {
+	background-position: -2160px 0
+}
+
+.yawning {
+	background-position: -2180px 0
+}
+
+.yes {
+	background-position: -2200px 0
+}
+
+ss {
+	background-image: url(../img/stills.png);
+	width: 20px;
+	height: 20px;
+	display: inline-block;
+	text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.nodb {
+	padding: 20px;
+	display: none;
+}
+
+.loading {
+	margin-top: 20px;
+}
+ /* Scrollbar */
+
+::-webkit-scrollbar {
+       width: 12px;
+       height: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+       border-radius: 6px;
+       min-height: 50px;
+}
+
+::-webkit-scrollbar{
+       width: 12px;
+       height: 12px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+       border-radius: 6px;
+       min-height: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+       border-radius: 6px;
+       min-height: 50px;
+}
+
+::-webkit-scrollbar-thumb {
+       background-color: #333;
+       border: 2px solid #000;
+}
+
+::-webkit-scrollbar-track {
+       background-color: #333;
+}
+
+::-webkit-scrollbar-thumb:hover {
+       background-color: #333;
+       border: 2px solid #000;
+}
+
+::-webkit-scrollbar-thumb {
+       background-color: #333;
+       border: 2px solid #000;
+}
