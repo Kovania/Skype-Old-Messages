@@ -1,6 +1,6 @@
 function Check() {
 	var callData = JSON.stringify({"serviceName":"Core", "methodName":"Check"});
-	$.post("/amfphp/gateway.php?contentType=application/json", callData, onSuccessCheck);
+	$.post("/Amfphp/gateway.php?contentType=application/json", callData, onSuccessCheck);
 }
 
 function onSuccessCheck(data) {
@@ -15,7 +15,7 @@ function onSuccessCheck(data) {
 
 function init() {
     var callData = JSON.stringify({"serviceName":"Skype", "methodName":"GetConversations"});
-    $.post("/amfphp/gateway.php?contentType=application/json", callData, onSuccessInit);
+    $.post("/Amfphp/gateway.php?contentType=application/json", callData, onSuccessInit);
 } 
 
 function onSuccessInit(data)
@@ -34,7 +34,7 @@ function loadchat(id) {
 	$(".chat").show();
 	
 	 var callData = JSON.stringify({"serviceName":"Skype", "methodName":"GetChat", "parameters":[id]});
-	 $.post("/amfphp/gateway.php?contentType=application/json", callData, onSuccessChat);
+	 $.post("/Amfphp/gateway.php?contentType=application/json", callData, onSuccessChat);
 }
 
 function onSuccessChat(data) {
